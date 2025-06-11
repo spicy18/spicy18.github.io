@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Site</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/localforage@1.10.0/dist/localforage.min.js"></script>
+</head>
+<body>
+
+  <h1 class="title">Sa <span style="color: red;">Pula</span>, Sa <span style="color: #fff;">Puti</span></h1>
+  <div class="controls">
+    <select id="color-select" onchange="changeSelectColor(this)" style="background-color: red;color:#000;width: 50px;" disabled>
+      <option value="1" selected>RRR</option>
+      <option value="2">3 Wites</option>
+      <option value="3">2 Reds, 1 Any</option>
+      <option value="4">2 Whites, 1 Any</option>
+      <option value="5">1 GO, 2 Any</option>
+      <option value="6">1 Go, 1 Red, 1 White</option>
+    </select>
+    <button onclick="spin()">Spin</button>
+    <button onclick="infiniteSpin(1)" id="infinite-spin-btn">Spin &#8734;</button>
+    <button onclick="infiniteSpin(0)" id="stop-infinite-spin-btn" style="display: none;">Stop</button>
+    <input type="text" value="1.2" id="bet-multiplier" placeholder="Bet Multiplier" style="width: 30px;margin-left: 5px;">
+    <input type="text" value="1000" id="initial-money" placeholder="Initial ₱" style="width: 50px;">
+    <button onclick="reset()">&#8635;</button>
+  </div>
+
+  <table id="month">
+    <tr>
+      <td class="month-td" id="td-1">1</td>            
+      <td class="month-td" id="td-2">2</td>            
+      <td class="month-td" id="td-3">3</td>            
+      <td class="month-td" id="td-4">4</td>            
+      <td class="month-td" id="td-5">5</td>            
+      <td class="month-td" id="td-6">6</td>            
+      <td class="month-td" id="td-7">7</td>            
+      <td class="month-td" id="td-8">8</td>            
+      <td class="month-td" id="td-9">9</td>            
+      <td class="month-td" id="td-10">10</td>
+    </tr>
+    <tr>
+      <td class="month-td" id="td-11">11</td>            
+      <td class="month-td" id="td-12">12</td>            
+      <td class="month-td" id="td-13">13</td>            
+      <td class="month-td" id="td-14">14</td>            
+      <td class="month-td" id="td-15">15</td>            
+      <td class="month-td" id="td-16">16</td>            
+      <td class="month-td" id="td-17">17</td>            
+      <td class="month-td" id="td-18">18</td>            
+      <td class="month-td" id="td-19">19</td>            
+      <td class="month-td" id="td-20">20</td>
+    </tr>
+    <tr>
+      <td class="month-td" id="td-21">21</td>            
+      <td class="month-td" id="td-22">22</td>            
+      <td class="month-td" id="td-23">23</td>            
+      <td class="month-td" id="td-24">24</td>            
+      <td class="month-td" id="td-25">25</td>            
+      <td class="month-td" id="td-26">26</td>            
+      <td class="month-td" id="td-27">27</td>            
+      <td class="month-td" id="td-28">28</td>            
+      <td class="month-td" id="td-29">29</td>            
+      <td class="month-td" id="td-30">30</td>
+    </tr>
+  </table>
+  Wins: <span id="greens">0</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loses: <span id="reds">0</span>
+  <button onclick="clearLS()" style="float: right;">Clear</button>
+  <textarea id="lose-streaks" rows="2" style="width: 98%; margin-top: 10px;font-size: 14px;" placeholder="Lose Streaks: 10 and more"></textarea>
+
+  <div class="container">
+    <ul id="results-ul"></ul>      
+  </div>
+
+  
+<script src="script.js"></script>
+</body>
+</html>
