@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Site</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/localforage@1.10.0/dist/localforage.min.js"></script>
+</head>
+<body>
+
+  <h1 class="title">Color Game</h1>
+  <div class="controls">
+    <select id="color-select" onchange="changeSelectColor(this)" style="background-color: pink;color:#000;width: 33px;">
+      <option value="pink">Pink</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="yellow">Yellow</option>
+      <option value="white">White</option>
+    </select>
+    <button onclick="spin()">Spin</button>
+    <button onclick="infiniteSpin(1)" id="infinite-spin-btn">Spin &#8734;</button>
+    <button onclick="infiniteSpin(0)" id="stop-infinite-spin-btn" style="display: none;">Stop</button>
+    <input type="text" value="2" id="bet-multiplier" placeholder="Bet Multiplier" style="width: 30px;margin-left: 10px;">
+    <input type="text" value="1000" id="initial-money" placeholder="Initial ₱" style="width: 70px;">
+    <button onclick="reset()">&#8635;</button>
+  </div>
+
+  <textarea id="lose-streaks" rows="3" style="width: 98%; margin-top: 10px;" placeholder="Lose Streaks: 6 and more"></textarea>
+
+  <div class="container">
+    <ul id="results-ul"></ul>      
+  </div>
+
+  
+<script src="script.js"></script>
+</body>
+</html>
