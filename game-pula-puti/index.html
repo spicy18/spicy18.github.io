@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Site</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/localforage@1.10.0/dist/localforage.min.js"></script>
+</head>
+<body>
+
+  <h1 class="title">Sa <span style="color: red;">Pula</span>, Sa <span style="color: #fff;">Puti</span></h1>
+  <div class="controls">
+    <select id="color-select" onchange="changeSelectColor(this)" style="background-color: red;color:#000;width: 50px;" disabled>
+      <option value="1" selected>RRR</option>
+      <option value="2">3 Wites</option>
+      <option value="3">2 Reds, 1 Any</option>
+      <option value="4">2 Whites, 1 Any</option>
+      <option value="5">1 GO, 2 Any</option>
+      <option value="6">1 Go, 1 Red, 1 White</option>
+    </select>
+    <button onclick="spin()">Spin</button>
+    <button onclick="infiniteSpin(1)" id="infinite-spin-btn">Spin &#8734;</button>
+    <button onclick="infiniteSpin(0)" id="stop-infinite-spin-btn" style="display: none;">Stop</button>
+    <input type="text" value="1" id="bet-multiplier" placeholder="Bet Multiplier" style="width: 30px;margin-left: 5px;">
+    <input type="text" value="1000" id="initial-money" placeholder="Initial ₱" style="width: 50px;">
+    <button onclick="reset()">&#8635;</button>
+  </div>
+
+  <textarea id="lose-streaks" rows="6" style="width: 98%; margin-top: 10px;font-size: 14px;" placeholder="Lose Streaks: 20 and more"></textarea>
+
+  <div class="container">
+    <ul id="results-ul"></ul>      
+  </div>
+
+  
+<script src="script.js"></script>
+</body>
+</html>
