@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Site</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/localforage@1.10.0/dist/localforage.min.js"></script>
+</head>
+<body>
+
+  <h1 class="title">European Roulette V2</h1>
+  
+  <button onclick="reset()" class="reset-btn reset-group">&#8635;</button>
+
+  <div class="controls">
+    BPM: <input type="text" value="10" id="bet-plus-minus" placeholder="Bet Multiplier" style="width: 30px;" class="reset-group">
+    IB: <input type="text" value="200" id="initial-bet" placeholder="Initial Bet" style="width: 45px;" class="reset-group">
+    IM: <input type="text" value="1000" id="initial-money" placeholder="Initial ₱" style="width: 60px;" class="reset-group">    
+  </div>
+
+  <div class="spin-group">
+    Current Bet: <input type="text" value="200" id="current-bet" placeholder="Current Bet" style="width: 60px;">
+    <select id="color-select" onchange="changeSelectColor(this)">
+      <option value="0">No bet</option>
+      <option value="red">Red</option>
+      <option value="black">Black</option>
+      <option value="green">Green</option>
+    </select>
+    <button onclick="spin()" id="spin-btn">Spin</button>
+  </div>
+    
+  <div id="stats">
+    <table>
+      <tr>
+        <td style="width: 130px;">
+          0 (Green):
+        </td>
+        <td style="width: 40px;">
+          <span id="greens" style="float: right">0</span>
+        </td>
+        <td style="width: 40px;"></td>
+        <td>
+          <span id="green-percentage" style="float: right">0.00%</span>
+        </td>
+        <td rowspan="3"> </td>
+      </tr>
+        <td>
+          Red:
+        </td>
+        <td>
+          <span id="reds" style="float: right">0</span>
+        </td>
+        <td>
+          <span id="red-diff" style="float: right;"></span>
+        </td>
+        <td>
+          <span id="red-percentage" style="float: right">0.00%</span>
+        </td>
+      </tr>
+        <td>
+          Black:
+        </td>
+        <td>
+          <span id="blacks" style="float: right">0</span>
+        </td>
+        <td>
+          <span id="black-diff" style="float: right;"></span>
+        </td>
+        <td>
+          <span id="black-percentage" style="float: right">0.00%</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+ 
+  <button onclick="spinsAlot()" style="display: none;">Spin x1000</button>
+  <div class="container">
+    <ul id="results-ul"></ul>      
+  </div>
+
+  <div id="triangle-left"></div><div id="triangle-right"></div>
+  
+<script src="script.js"></script>
+</body>
+</html>
